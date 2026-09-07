@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage__c</fullName>
+    <label>Stage</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Applied</fullName>
+                <default>true</default>
+                <label>Applied</label>
+            </value>
+            <value>
+                <fullName>Screening</fullName>
+                <default>false</default>
+                <label>Screening</label>
+            </value>
+            <value>
+                <fullName>Shortlisted</fullName>
+                <default>false</default>
+                <label>Shortlisted</label>
+            </value>
+            <value>
+                <fullName>Interview Scheduled</fullName>
+                <default>false</default>
+                <label>Interview Scheduled</label>
+            </value>
+            <value>
+                <fullName>Interviewed</fullName>
+                <default>false</default>
+                <label>Interviewed</label>
+            </value>
+            <value>
+                <fullName>Offer Approval</fullName>
+                <default>false</default>
+                <label>Offer Approval</label>
+            </value>
+            <value>
+                <fullName>Offer Sent</fullName>
+                <default>false</default>
+                <label>Offer Sent</label>
+            </value>
+            <value>
+                <fullName>Offer Accepted</fullName>
+                <default>false</default>
+                <label>Offer Accepted</label>
+            </value>
+            <value>
+                <fullName>Offer Declined</fullName>
+                <default>false</default>
+                <label>Offer Declined</label>
+            </value>
+            <value>
+                <fullName>Document Verification</fullName>
+                <default>false</default>
+                <label>Document Verification</label>
+            </value>
+            <value>
+                <fullName>Documents Verified</fullName>
+                <default>false</default>
+                <label>Documents Verified</label>
+            </value>
+            <value>
+                <fullName>Documents Rejected</fullName>
+                <default>false</default>
+                <label>Documents Rejected</label>
+            </value>
+            <value>
+                <fullName>Joining Letter Sent</fullName>
+                <default>false</default>
+                <label>Joining Letter Sent</label>
+            </value>
+            <value>
+                <fullName>Onboarded</fullName>
+                <default>false</default>
+                <label>Onboarded</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
