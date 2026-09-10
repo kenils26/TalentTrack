@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Invalid_Stage_Transition</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(ISNEW()),
+    ISCHANGED(Stage__c),
+    NOT(
+        OR(
+            AND(ISPICKVAL(PRIORVALUE(Stage__c), &quot;Applied&quot;), ISPICKVAL(Stage__c, &quot;Screening&quot;)),
+            AND(ISPICKVAL(PRIORVALUE(Stage__c), &quot;Screening&quot;), ISPICKVAL(Stage__c, &quot;Shortlisted&quot;)),
+            AND(ISPICKVAL(PRIORVALUE(Stage__c), &quot;Shortlisted&quot;), ISPICKVAL(Stage__c, &quot;Interview Scheduled&quot;)),
+            AND(ISPICKVAL(PRIORVALUE(Stage__c), &quot;Interview Scheduled&quot;), ISPICKVAL(Stage__c, &quot;Interviewed&quot;)),
+            AND(ISPICKVAL(PRIORVALUE(Stage__c), &quot;Interviewed&quot;), ISPICKVAL(Stage__c, &quot;Offer Approval&quot;)),
+            AND(ISPICKVAL(PRIORVALUE(Stage__c), &quot;Offer Approval&quot;), ISPICKVAL(Stage__c, &quot;Offer Sent&quot;)),
+            AND(ISPICKVAL(PRIORVALUE(Stage__c), &quot;Offer Sent&quot;), ISPICKVAL(Stage__c, &quot;Offer Accepted&quot;)),
+            AND(ISPICKVAL(PRIORVALUE(Stage__c), &quot;Offer Sent&quot;), ISPICKVAL(Stage__c, &quot;Offer Declined&quot;)),
+            AND(ISPICKVAL(PRIORVALUE(Stage__c), &quot;Offer Accepted&quot;), ISPICKVAL(Stage__c, &quot;Document Verification&quot;)),
+            AND(ISPICKVAL(PRIORVALUE(Stage__c), &quot;Document Verification&quot;), ISPICKVAL(Stage__c, &quot;Documents Verified&quot;)),
+            AND(ISPICKVAL(PRIORVALUE(Stage__c), &quot;Document Verification&quot;), ISPICKVAL(Stage__c, &quot;Documents Rejected&quot;)),
+            AND(ISPICKVAL(PRIORVALUE(Stage__c), &quot;Documents Rejected&quot;), ISPICKVAL(Stage__c, &quot;Document Verification&quot;)),
+            AND(ISPICKVAL(PRIORVALUE(Stage__c), &quot;Documents Verified&quot;), ISPICKVAL(Stage__c, &quot;Joining Letter Sent&quot;)),
+            AND(ISPICKVAL(PRIORVALUE(Stage__c), &quot;Joining Letter Sent&quot;), ISPICKVAL(Stage__c, &quot;Onboarded&quot;))
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>Invalid Application Stage transition. Please follow the defined recruitment lifecycle.</errorMessage>
+</ValidationRule>
